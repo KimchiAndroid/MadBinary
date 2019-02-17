@@ -14,22 +14,23 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // Number Button
-        btn1.setOnClickListener{input_text.setText(btn1.text.toString() + input_text.text.toString())}
-        btn2.setOnClickListener{input_text.setText(btn2.text.toString() + input_text.text.toString())}
-        btn3.setOnClickListener{input_text.setText(btn3.text.toString() + input_text.text.toString())}
-        btn4.setOnClickListener{input_text.setText(btn4.text.toString() + input_text.text.toString())}
-        btn5.setOnClickListener{input_text.setText(btn5.text.toString() + input_text.text.toString())}
-        btn6.setOnClickListener{input_text.setText(btn6.text.toString() + input_text.text.toString())}
-        btn7.setOnClickListener{input_text.setText(btn7.text.toString() + input_text.text.toString())}
-        btn8.setOnClickListener{input_text.setText(btn8.text.toString() + input_text.text.toString())}
-        btn9.setOnClickListener{input_text.setText(btn9.text.toString() + input_text.text.toString())}
-        btn0.setOnClickListener{input_text.setText(btn0.text.toString() + input_text.text.toString())}
+        btn1.setOnClickListener{input_text.setText(input_text.text.toString() + btn1.text.toString())}
+        btn2.setOnClickListener{input_text.setText(input_text.text.toString() + btn2.text.toString())}
+        btn3.setOnClickListener{input_text.setText(input_text.text.toString() + btn3.text.toString())}
+        btn4.setOnClickListener{input_text.setText(input_text.text.toString() + btn4.text.toString())}
+        btn5.setOnClickListener{input_text.setText(input_text.text.toString() + btn5.text.toString())}
+        btn6.setOnClickListener{input_text.setText(input_text.text.toString() + btn6.text.toString())}
+        btn7.setOnClickListener{input_text.setText(input_text.text.toString() + btn7.text.toString())}
+        btn8.setOnClickListener{input_text.setText(input_text.text.toString() + btn8.text.toString())}
+        btn9.setOnClickListener{input_text.setText(input_text.text.toString() + btn9.text.toString())}
+        btn0.setOnClickListener{input_text.setText(input_text.text.toString() + btn0.text.toString())}
 
         // Text Control
+        input_text.inputType = 0 // unable to write by keyboard
         btn_remove.setOnClickListener{
             var str = input_text.text.toString()
             if(str.isNotBlank()){
-                input_text.setText(str.slice(IntRange(1, str.length - 1)))
+                input_text.setText(str.slice(IntRange(0, str.length - 2)))
             }
         }
 

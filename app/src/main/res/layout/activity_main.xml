@@ -17,8 +17,10 @@
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:textAlignment="textEnd"
                 android:layout_weight = "1"
                 android:inputType="number"
+                android:cursorVisible="false"
                 android:ems="10"
                 android:id="@+id/input_text"/>
         <TextView
@@ -27,6 +29,7 @@
                 android:text = "Test!"
                 android:textSize ="30dp"
                 android:layout_weight="1"/>
+
     </LinearLayout>
 
     <LinearLayout android:layout_width="match_parent"
