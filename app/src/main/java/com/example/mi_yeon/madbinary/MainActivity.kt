@@ -25,10 +25,11 @@ class MainActivity : AppCompatActivity() {
         btn9.setOnClickListener{input_text.setText(btn9.text.toString() + input_text.text.toString())}
         btn0.setOnClickListener{input_text.setText(btn0.text.toString() + input_text.text.toString())}
 
+        // Text Control
         btn_remove.setOnClickListener{
-            var str = input_text.text.toString();
-            if(str.isNotEmpty()){
-                input_text.setText(str.slice(IntRange(0, str.length-1)));
+            var str = input_text.text.toString()
+            if(str.isNotBlank()){
+                input_text.setText(str.slice(IntRange(1, str.length - 1)))
             }
         }
 

@@ -9,19 +9,29 @@
         tools:context=".MainActivity">
 
     <LinearLayout android:layout_width="match_parent"
-                  android:layout_height="300dp"
-                  android:layout_gravity = "top">
+                  android:layout_height="0dp"
+                  android:layout_weight = "1"
+                  android:layout_gravity = "top"
+                    android:orientation="vertical">
 
         <EditText
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="0dp"
+                android:layout_weight = "1"
                 android:inputType="number"
                 android:ems="10"
-                android:id="@+id/input_text"
+                android:id="@+id/input_text"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text = "Test!"
+                android:textSize ="30dp"
                 android:layout_weight="1"/>
     </LinearLayout>
+
     <LinearLayout android:layout_width="match_parent"
-                  android:layout_height="420dp"
+                  android:layout_height="0dp"
+                  android:layout_weight="2"
                   android:orientation="vertical"
                   android:layout_gravity="bottom">
 
