@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        var mode = 10
         // Number Button
         btn1.setOnClickListener{input_text.setText(input_text.text.toString() + btn1.text.toString())}
         btn2.setOnClickListener{input_text.setText(input_text.text.toString() + btn2.text.toString())}
@@ -45,7 +46,9 @@ class MainActivity : AppCompatActivity() {
                 if (!s.isNullOrBlank()) {
                     try{
                         output_text.setText(s.toString().toLong(10).toString(16).toUpperCase())
-                    } catch(e : Exception){
+                        // output_text.setText(s.toString().toLong(10).toString(8).toUpperCase())
+                        // output_text.setText(s.toString().toLong(10).toString(2).toUpperCase())
+                    } catch(e : Exception){ //
                         output_text.setText(e.toString())
                     }
                 }
@@ -73,7 +76,5 @@ class MainActivity : AppCompatActivity() {
                     input_text.setText(str.slice(IntRange(0, str.length - 2)))
             }
         }
-
-
     }
 }
