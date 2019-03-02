@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        /*
         var mode = 10
         // Number Button
         btn1.setOnClickListener{input_text.setText(input_text.text.toString() + btn1.text.toString())}
@@ -76,5 +77,7 @@ class MainActivity : AppCompatActivity() {
                     input_text.setText(str.slice(IntRange(0, str.length - 2)))
             }
         }
+        */
     }
+
 }
