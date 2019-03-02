@@ -2,6 +2,8 @@ package com.example.mi_yeon.madbinary
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -27,12 +29,51 @@ class MainActivity : AppCompatActivity() {
 
         // Text Control
         input_text.inputType = 0 // unable to write by keyboard
+        output_text.inputType = 0
+
         btn_remove.setOnClickListener{
             var str = input_text.text.toString()
             if(str.isNotBlank()){
                 input_text.setText(str.slice(IntRange(0, str.length - 2)))
             }
         }
+
+
+        // Convert input value to hex value
+        input_text.addTextChangedListener(object : TextWatcher{
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if (!s.isNullOrBlank()) {
+                    try{
+                        output_text.setText(s.toString().toLong(10).toString(16).toUpperCase())
+                    } catch(e : Exception){
+                        output_text.setText(e.toString())
+                    }
+                }
+                else {
+                    output_text.setText("")
+                }
+            }
+            override fun afterTextChanged(s: Editable?) {
+                // TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+               // TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
+        })
+
+        // Function Control
+
+        btn_reverse.setOnClickListener{
+            var str = input_text.text.toString()
+            if(str.isNotBlank()){
+                if(str.toLong() > 0)
+                    input_text.setText("-" + str.slice(IntRange(0, str.length - 2)))
+                else
+                    input_text.setText(str.slice(IntRange(0, str.length - 2)))
+            }
+        }
+
 
     }
 }

@@ -8,27 +8,65 @@
         android:orientation="vertical"
         tools:context=".MainActivity">
 
-    <LinearLayout android:layout_width="match_parent"
-                  android:layout_height="0dp"
-                  android:layout_weight = "1"
-                  android:layout_gravity = "top"
-                    android:orientation="vertical">
-
-        <EditText
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight = "1"
+            android:layout_gravity = "top"
+            android:orientation="vertical">
+        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:textAlignment="textEnd"
                 android:layout_weight = "1"
-                android:inputType="number"
-                android:cursorVisible="false"
-                android:ems="10"
-                android:id="@+id/input_text"/>
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:text = "Test!"
-                android:textSize ="30dp"
-                android:layout_weight="1"/>
+                android:background = "#0000ff"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text = "[Hex]"
+                    android:textSize ="30dp"
+                    android:background = "#00ff00"
+                    android:layout_weight="1"/>
+            <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight = "2"
+                    android:inputType="number"
+                    android:cursorVisible="false"
+                    android:ems="10"
+                    android:textAlignment="textEnd"
+                    android:background = "#ff0000"
+                    android:id="@+id/output_text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight = "1"
+                android:background = "#00ffff">
+
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text = "input"
+                    android:textSize ="30dp"
+                    android:layout_weight = "1"
+                    android:background = "#00ff00"/>
+            <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight = "2"
+                    android:textAlignment="textEnd"
+                    android:inputType="number"
+                    android:cursorVisible="false"
+                    android:ems="10"
+                    android:background = "#ff0000"
+                    android:id="@+id/input_text"/>
+
+        </LinearLayout>
+
 
     </LinearLayout>
 
@@ -110,7 +148,7 @@
             <Button android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:text="±"
-                    android:id="@+id/btn_plus_minus"
+                    android:id="@+id/btn_reverse"
                     android:textSize="30dp"/>
 
             <Button android:layout_width="100dp"
