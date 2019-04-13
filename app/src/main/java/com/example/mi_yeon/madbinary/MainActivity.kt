@@ -21,7 +21,13 @@ class MainActivity : AppCompatActivity() {
         text_oct.showSoftInputOnFocus = false
         text_bin.showSoftInputOnFocus = false
 
-        /*
+        //set input_text and output_text
+
+        var input_text = text_dec
+        var output_text_hex = text_hex
+        var output_text_oct = text_oct
+        var output_text_bin = text_bin
+
         var mode = 10
         // Number Button
         btn1.setOnClickListener{input_text.setText(input_text.text.toString() + btn1.text.toString())}
@@ -36,8 +42,10 @@ class MainActivity : AppCompatActivity() {
         btn0.setOnClickListener{input_text.setText(input_text.text.toString() + btn0.text.toString())}
 
         // Text Control
+        /*
         input_text.inputType = 0 // unable to write by keyboard
         output_text.inputType = 0
+        */
 
         btn_remove.setOnClickListener{
             var str = input_text.text.toString()
@@ -52,15 +60,19 @@ class MainActivity : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if (!s.isNullOrBlank()) {
                     try{
-                        output_text.setText(s.toString().toLong(10).toString(16).toUpperCase())
-                        // output_text.setText(s.toString().toLong(10).toString(8).toUpperCase())
-                        // output_text.setText(s.toString().toLong(10).toString(2).toUpperCase())
+                        output_text_hex.setText(s.toString().toLong(10).toString(16).toUpperCase())
+                        output_text_oct.setText(s.toString().toLong(10).toString(8).toUpperCase())
+                        output_text_bin.setText(s.toString().toLong(10).toString(2).toUpperCase())
                     } catch(e : Exception){ //
-                        output_text.setText(e.toString())
+                        output_text_hex.setText(e.toString())
+                        output_text_oct.setText(e.toString())
+                        output_text_bin.setText(e.toString())
                     }
                 }
                 else {
-                    output_text.setText("")
+                    output_text_hex.setText("")
+                    output_text_oct.setText("")
+                    output_text_bin.setText("")
                 }
             }
             override fun afterTextChanged(s: Editable?) {
@@ -83,7 +95,6 @@ class MainActivity : AppCompatActivity() {
                     input_text.setText(str.slice(IntRange(0, str.length - 2)))
             }
         }
-        */
     }
 
 }
