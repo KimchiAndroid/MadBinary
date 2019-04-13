@@ -15,6 +15,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // disable floating keyboard during copy & paste
+        text_hex.showSoftInputOnFocus = false
+        text_dec.showSoftInputOnFocus = false
+        text_oct.showSoftInputOnFocus = false
+        text_bin.showSoftInputOnFocus = false
+
         /*
         var mode = 10
         // Number Button
